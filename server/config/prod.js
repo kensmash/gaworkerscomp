@@ -1,5 +1,5 @@
 // production keys
 module.exports = {
-  mongoURI: "",
-  secret: ""
+  mongoURI: process.env.MONGODB_URI,
+  secret: process.env.SECRET
 };
