@@ -1,11 +1,13 @@
 {
   "name": "GAWorkersComp",
   "version": "1.0.0",
-  "description": "An online journal covering all aspects of the Georgia Workers Compensation system.",
+  "description":
+    "An online journal covering all aspects of the Georgia Workers Compensation system.",
   "author": "Ken Frederick",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
+    "dev":
+      "cross-env NODE_ENV=development nodemon server/index.js --watch server",
     "build": "nuxt build",
     "start": "cross-env NODE_ENV=production node server/index.js",
     "generate": "nuxt generate"
@@ -34,5 +36,8 @@
   "devDependencies": {
     "cross-env": "^5.0.1",
     "nodemon": "^1.11.0"
+  },
+  "engines": {
+    "node": "9.4.0"
   }
 }
