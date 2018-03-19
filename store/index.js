@@ -247,7 +247,7 @@ const createStore = () => {
         vuexContext.commit("setArticles", []);
         return (
           this.$axios
-            .$get("/api/articles/page/" + page)
+            .$get(process.env.baseUrl + "/api/articles/page/" + page)
             .then(res => {
               vuexContext.commit("setArticles", res.articles);
             })
