@@ -1,6 +1,7 @@
 <template>
   <section class="article-list">
     <ArticlePreview v-for="article in articles.slice(0, 5)" :key="article._id" :id="article._id" :title="article.title" :author="article.author" :is-admin="isAdmin" />
+    <hr>
     <p class="all-articles-link">
       <nuxt-link to="/articles/page/1">See All Articles</nuxt-link>
     </p>
@@ -81,6 +82,6 @@
   }
 
   .all-articles-link {
-    margin-top: 2em;
+    margin: 0;
   }
 </style>

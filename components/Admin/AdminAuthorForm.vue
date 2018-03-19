@@ -90,6 +90,7 @@
     min-height: 200px;
     max-height: 400px;
     overflow-y: auto;
+    font-size: 0.85em;
   }
   .error-message {
     color: red;

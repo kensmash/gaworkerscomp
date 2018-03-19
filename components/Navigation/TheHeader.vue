@@ -31,6 +31,15 @@
     .navbar-brand {
       display: none;
     }
+
+    .navbar-collapse {
+      justify-content: center;
+    }
+
+    .navbar-nav {
+      width: 70%;
+      justify-content: space-between;
+    }
   }
 </style>
 

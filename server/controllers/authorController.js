@@ -31,7 +31,7 @@ module.exports = {
   },
 
   async fetchall(req, res) {
-    const allauthors = await Author.find({});
+    const allauthors = await Author.find({}).sort({ name: 1 });
     res.send({ authors: allauthors });
   },
 

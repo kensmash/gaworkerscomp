@@ -29,6 +29,25 @@
       background-color: rgba(74, 74, 74, 0.5) !important;
       margin-top: 3em;
     }
+
+    .navbar-brand {
+      margin-right: 0.25em;
+    }
+
+    @media only screen and (min-width: 640px) {
+      .navbar-brand {
+        display: none;
+      }
+
+      .navbar-collapse {
+        justify-content: center;
+      }
+
+      .navbar-nav {
+        width: 90%;
+        justify-content: space-between;
+      }
+    }
 </style>
 
 
