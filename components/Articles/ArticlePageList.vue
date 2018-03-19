@@ -71,7 +71,7 @@
     },
     methods: {
       linkGen(pageNum) {
-        return "/articles/page/" + pageNum;
+        return process.env.baseUrl + "/articles/page/" + pageNum;
       },
       fetchArticles(page) {
         this.pageswitching = true;

@@ -92,7 +92,9 @@
       myProvider(ctx) {
         this.isBusy = true;
         return this.$axios
-          .$get("/api/admin/articles/page/" + ctx.currentPage)
+          .$get(
+            process.env.baseUrl + "/api/admin/articles/page/" + ctx.currentPage
+          )
           .then(res => {
             this.$store.commit("setTotalAdminArticlePages", res.pages);
             const items = res.articles.map(article => ({

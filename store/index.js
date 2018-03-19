@@ -123,7 +123,7 @@ const createStore = () => {
       nuxtServerInit(vuexContext, context) {
         return (
           context.app.$axios
-            .$get("/api/articles/page/1")
+            .$get(process.env.baseUrl + "/api/articles/page/1")
             .then(res => {
               console.log("attempted article fetch");
               vuexContext.commit("setArticles", res.articles);
@@ -135,7 +135,7 @@ const createStore = () => {
       },
       authenticateUser(vuexContext, authData) {
         return this.$axios
-          .$post("/api/signin", {
+          .$post(process.env.baseUrl + "/api/signin", {
             email: authData.email,
             password: authData.password
           })
@@ -196,7 +196,7 @@ const createStore = () => {
       },
       fetchAuthors(vuexContext) {
         return this.$axios
-          .$get("/api/authors")
+          .$get(process.env.baseUrl + "/api/authors")
           .then(res => {
             vuexContext.commit("setAuthors", res.authors);
           })
@@ -204,7 +204,7 @@ const createStore = () => {
       },
       addAuthor(vuexContext, author) {
         return this.$axios
-          .$post("/api/authors", author, {
+          .$post(process.env.baseUrl + "/api/authors", author, {
             headers: { authorization: vuexContext.state.token }
           })
           .then(data => {
@@ -217,9 +217,13 @@ const createStore = () => {
       },
       editAuthor(vuexContext, editedAuthor) {
         return this.$axios
-          .$put("/api/authors/" + editedAuthor._id, editedAuthor, {
-            headers: { authorization: vuexContext.state.token }
-          })
+          .$put(
+            process.env.baseUrl + "/api/authors/" + editedAuthor._id,
+            editedAuthor,
+            {
+              headers: { authorization: vuexContext.state.token }
+            }
+          )
           .then(res => {
             vuexContext.commit("editAuthor", {
               ...editedAuthor
@@ -229,7 +233,7 @@ const createStore = () => {
       },
       removeAuthor(vuexContext, authorId) {
         return this.$axios
-          .$delete("/api/authors/" + authorId, {
+          .$delete(process.env.baseUrl + "/api/authors/" + authorId, {
             headers: { authorization: vuexContext.state.token }
           })
           .then(res => vuexContext.commit("removeAuthor", res._id))
@@ -258,7 +262,7 @@ const createStore = () => {
           updatedDate: new Date()
         };
         return this.$axios
-          .$post("/api/articles/", createdArticle, {
+          .$post(process.env.baseUrl + "/api/articles/", createdArticle, {
             headers: { authorization: vuexContext.state.token }
           })
           .then(data => {
@@ -271,9 +275,13 @@ const createStore = () => {
       },
       editArticle(vuexContext, editedArticle) {
         return this.$axios
-          .$put("/api/articles/" + editedArticle.id, editedArticle, {
-            headers: { authorization: vuexContext.state.token }
-          })
+          .$put(
+            process.env.baseUrl + "/api/articles/" + editedArticle.id,
+            editedArticle,
+            {
+              headers: { authorization: vuexContext.state.token }
+            }
+          )
           .then(res => {
             vuexContext.commit("editArticle", {
               ...editedArticle
@@ -283,7 +291,7 @@ const createStore = () => {
       },
       removeArticle(vuexContext, articleId) {
         return this.$axios
-          .$delete("/api/articles/" + articleId, {
+          .$delete(process.env.baseUrl + "/api/articles/" + articleId, {
             headers: { authorization: vuexContext.state.token }
           })
           .then(res => vuexContext.commit("removeArticle", res._id))
@@ -300,7 +308,9 @@ const createStore = () => {
       },
       searchArticlesByTitle(vuexContext, searchterm) {
         return this.$axios
-          .$post("/api/articles/searchtitle", { searchterm })
+          .$post(process.env.baseUrl + "/api/articles/searchtitle", {
+            searchterm
+          })
           .then(result => {
             vuexContext.commit("setSearchResults", result);
           })
@@ -308,7 +318,9 @@ const createStore = () => {
       },
       searchArticlesByAuthor(vuexContext, authorid) {
         return this.$axios
-          .$post("/api/articles/searchauthor", { authorid })
+          .$post(process.env.baseUrl + "/api/articles/searchauthor", {
+            authorid
+          })
           .then(result => {
             vuexContext.commit("setSearchResults", result);
           })

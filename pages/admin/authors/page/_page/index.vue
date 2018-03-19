@@ -80,7 +80,7 @@
       myProvider(ctx) {
         this.isBusy = true;
         return this.$axios
-          .$get("/api/authors/page/" + ctx.currentPage)
+          .$get(process.env.baseUrl + "/api/authors/page/" + ctx.currentPage)
           .then(res => {
             const items = res.authors.map(author => ({
               name: author.name,

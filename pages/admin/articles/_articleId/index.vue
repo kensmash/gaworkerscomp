@@ -16,8 +16,10 @@
     },
     async asyncData(context) {
       let [article, authors] = await Promise.all([
-        context.app.$axios.$get("/api/articles/" + context.params.articleId),
-        context.app.$axios.$get("/api/authors")
+        context.app.$axios.$get(
+          process.env.baseUrl + "/api/articles/" + context.params.articleId
+        ),
+        context.app.$axios.$get(process.env.baseUrl + "/api/authors")
       ]);
       let articleAuthors;
       if (article.author.length) {

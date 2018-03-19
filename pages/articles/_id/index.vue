@@ -28,7 +28,7 @@
   export default {
     asyncData(context) {
       return context.app.$axios
-        .$get("/api/articles/" + context.params.id)
+        .$get(process.env.baseUrl + "/api/articles/" + context.params.id)
         .then(res => {
           return {
             loadedArticle: res

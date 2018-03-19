@@ -16,7 +16,7 @@
     },
     asyncData(context) {
       return context.app.$axios
-        .$get("/api/authors/" + context.params.authorId)
+        .$get(process.env.baseUrl + "/api/authors/" + context.params.authorId)
         .then(response => {
           return {
             loadedAuthor: response

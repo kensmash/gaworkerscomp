@@ -16,7 +16,7 @@
     },
     asyncData(context) {
       return context.app.$axios
-        .$get("/api/authors")
+        .$get(process.env.baseUrl + "/api/authors")
         .then(response => {
           return {
             authors: response.authors.map(author => ({

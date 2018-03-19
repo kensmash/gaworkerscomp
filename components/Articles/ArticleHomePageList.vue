@@ -30,7 +30,11 @@
           return this.$store.getters.loadedArticles;
         } else {
           return this.$axios
-            .$get("/api/articles/page/" + this.$route.params.page)
+            .$get(
+              process.env.baseUrl +
+                "/api/articles/page/" +
+                this.$route.params.page
+            )
             .then(res => {
               const items = res.articles.map(article => ({
                 title: article.title,
@@ -62,7 +66,7 @@
     },
     methods: {
       linkGen(pageNum) {
-        return "/articles/page/" + pageNum;
+        return process.env.baseUrl + "/articles/page/" + pageNum;
       }
     }
   };
