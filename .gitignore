@@ -12,4 +12,3 @@ dist
 
 # not sure about this
 server/config/dev.js
-.env
