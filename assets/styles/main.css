@@ -65,7 +65,7 @@ body {
 -------------------------------------------------------*/
 
 .article-title {
-  font-size: 1.5em;
+  font-size: 1.75em;
   font-weight: 700;
   margin-bottom: 0;
 }
@@ -76,9 +76,13 @@ body {
   margin: 0.75em 0;
 }
 
+.article-meta {
+  margin: 0.25em 0 1em;
+}
+
 .article-meta p {
   margin: 0;
-  font-size: 0.75em;
+  font-size: 0.9em;
   line-height: 1.35em;
 }
 
@@ -114,6 +118,14 @@ body {
   .page-content,
   .article {
     padding: 1.5em 2em;
+  }
+
+  .article-title {
+    font-size: 1.5em;
+  }
+
+  .article-meta p {
+    font-size: 0.75em;
   }
 }
 
