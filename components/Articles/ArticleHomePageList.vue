@@ -67,7 +67,7 @@
     },
     methods: {
       linkGen(pageNum) {
-        return process.env.baseUrl + "/articles/page/" + pageNum;
+        return "/articles/page/" + pageNum;
       }
     }
   };

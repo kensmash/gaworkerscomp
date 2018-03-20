@@ -9,7 +9,7 @@
     <h3> William N. Anderson - Editor </h3>
     <p>Mr. Anderson received his BA in 1990 from the University of North Carolina at Charlotte. He received his Juris Doctor from Mercer University in 1993. While in law school, he was a member of the law review (1991-1993), received the Dean's Public Service Award, and was the Co-Chair of the 1993 National Conference of Law Reviews. He is an AV-rated lawyer and a partner with the law firm of Hamilton, Westby, Antonowich & Anderson where his primary area of practice is workers&rsquo; compensation defense. Mr. Anderson often speaks to employers, insurers, and self-insurers regarding workers&rsquo; compensation issues. He is the co-founder of GA WorkersComp, and may be reached at bill@gaworkerscomp.com or (404)-872-3500.</p>
     <p class="design-credit">Design by
-      <a href="http://www.kenfrederick.com" target="_blank">Ken Frederick</a>
+      <a href="https://www.kenfrederick.com" target="_blank">Ken Frederick</a>
     </p>
   </div>
 </template>
