@@ -58,5 +58,6 @@
     padding: 0;
     font-size: 0.75em;
     line-height: 1.25em;
+    color: #808080;
   }
 </style>
