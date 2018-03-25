@@ -1,5 +1,6 @@
 const express = require("express");
 const { Nuxt, Builder } = require("nuxt");
+var cors = require("cors");
 const app = express();
 const bodyParser = require("body-parser");
 const morgan = require("morgan");
@@ -27,7 +28,19 @@ async function start() {
     await builder.build();
   }
 
+  var whitelist = ["http://www.gaworkerscomp.com", "http://gaworkerscomp.com"];
+  var corsOptions = {
+    origin: function(origin, callback) {
+      if (whitelist.indexOf(origin) !== -1) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    }
+  };
+
   //app.use(morgan("combined"));
+  app.use(cors());
   app.use(bodyParser.json({ type: "*/*" }));
 
   //Routes
