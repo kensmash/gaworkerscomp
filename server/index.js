@@ -30,7 +30,10 @@ async function start() {
     await builder.build();
   }
 
-  var whitelist = ["http://www.gaworkerscomp.com", "http://gaworkerscomp.com"];
+  var whitelist = [
+    "https://www.gaworkerscomp.com",
+    "http://www.gaworkerscomp.com"
+  ];
   var corsOptions = {
     origin: function(origin, callback) {
       if (whitelist.indexOf(origin) !== -1) {
