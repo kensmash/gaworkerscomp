@@ -44,9 +44,9 @@ async function start() {
     }
   };
 
+  app.use(cors());
   // Don't redirect if the hostname is `localhost:port` or the route is `/insecure`
   app.use(redirectToHTTPS([/localhost:(\d{4})/], [/\/insecure/]));
-  app.use(cors());
   app.use(bodyParser.json({ type: "*/*" }));
 
   //Routes
