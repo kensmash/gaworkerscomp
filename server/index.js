@@ -8,6 +8,8 @@ const mongoose = require("mongoose");
 const keys = require("./config/keys");
 const host = process.env.HOST || "127.0.0.1";
 const port = process.env.PORT || 3000;
+//redirect to https on live site
+const redirectToHTTPS = require("express-http-to-https").redirectToHTTPS;
 
 //connect mongoose to MongoDB
 mongoose.connect(keys.mongoURI);
@@ -39,7 +41,8 @@ async function start() {
     }
   };
 
-  //app.use(morgan("combined"));
+  // Don't redirect if the hostname is `localhost:port` or the route is `/insecure`
+  app.use(redirectToHTTPS([/localhost:(\d{4})/], [/\/insecure/]));
   app.use(cors());
   app.use(bodyParser.json({ type: "*/*" }));
 
